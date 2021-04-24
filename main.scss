@@ -1,0 +1,444 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap');
+@import "libs/mixins";
+@import "libs/placeholders";
+
+/*==                ==*/
+/*==  GLOBAL STYLE  ==*/
+/*==                ==*/
+
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+    line-height: 25px;
+}
+
+h1 {
+    @include absolute-center(50%, 0%, 0%, -50%);
+    border: 2px solid #fff;
+    padding: 1rem;
+    width: 80%;
+    font-size: 40px;
+    line-height: 38px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+img {
+    width: 100%;
+    height: 100%
+}
+
+.desktop {
+    display: none;
+}
+
+/*==                    ==*/
+/*==  END GLOBAL STYLE  ==*/
+/*==                    ==*/
+
+
+/*===            ===*/
+/*===MAIN CONTENT===*/
+/*===            ===*/
+
+main {
+    background: url(images/mobile/image-hero.jpg) center/cover no-repeat;
+    height: 650px;
+    width: 100%;
+    padding-top: 50px;
+    position: relative;
+    color: white;
+}
+
+.container {
+    @extend %container;
+    position: relative;
+    height: 600px;
+
+    nav {
+        display: flex;
+        align-items: center;
+        z-index: 1;
+    
+        ul {
+            @include absolute-center(0%, 0%, 0%, -200%);
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            z-index: 0;
+            background-color: #000;
+            @include transition(.5s, ease-in-out);
+    
+            .toggle-close {
+                cursor: pointer;
+                @include absolute-center(0%, auto, -50%, 50%);
+                right: 0;
+            }
+    
+            .nav-link {
+                position: relative;
+                margin-left: auto;
+                margin-right: auto;
+                font-weight: bold;
+                color: white;
+                text-decoration: none;
+                padding: 10px 0;
+                
+            }
+    
+        }
+    
+        .toggle {
+            cursor: pointer;
+            margin-left: auto;
+        }
+    }
+
+}
+
+
+/*==  ======        ==*/
+/*==  HOVER ON LINKS  ==*/
+/*==  ======        ==*/
+.nav-link {
+    &::after {
+        content: "";
+        @include absolute(auto, 0, 0, 0);
+        @include transition(.3s, ease-in-out);
+        height: 5%;
+        transform: scale(0);
+        background-color: #fff;
+    }
+
+    &:hover::after {
+        transform: scale(1);
+    }
+}
+
+/* Toggle mobile navbar*/
+.is-open {
+    transform: translateY(0);
+}
+
+.vr, .galerie {
+    @extend %container;
+    text-align: center
+}
+
+/*==============*/
+/*VIRTUAL GALERY*/
+/*==============*/
+
+.vr {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+
+    h2 {
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-family: 'Alata';
+        opacity: .5;
+    }
+}
+
+/*==  ======  ==*/
+/*==  GALERY SECTION  ==*/
+/*==  ======  ==*/
+
+.galerie {
+    font-size: 18px;
+    margin-bottom: 50px;
+
+    .img {
+        position: relative;
+        margin: 15px 0;
+        cursor: pointer;
+        height: 240px;
+
+        .mask {
+            @include absolute(0, 0, 0, 0);
+            background: linear-gradient(270deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.601863) 100%);
+        }
+
+        .subtitle {
+            @include absolute-center(50%, 5%, 0, -50%);
+            text-transform: uppercase;
+            width: 25%;
+            text-align: left;
+            color: white;
+            font-size: 24px;
+            line-height: 24px;
+        }
+    }
+
+    /*HOVER EFFECTS ON SEE ALL*/
+    .see-all {
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        color: black;
+        font-family: 'Alata';
+        font-size: 14px;
+        line-height: 14px;
+        letter-spacing: 5px;
+        padding: 0.5rem 2rem;
+        box-shadow: 0 0 2px #000;
+        z-index: 0;
+
+        &::after {
+            content: "";
+            @include absolute(0, 0, 0, 0);
+            background-color: #000;
+            clip-path: circle(0.0% at 15% 50%);
+            @include transition(.3s);
+            z-index: -1;
+        }
+
+        &:hover {
+            color: white;
+        }
+
+        &:hover::after {
+            clip-path: circle(120.0% at 15% 50%);
+        }
+
+    }
+
+}
+
+/*==  ======  ==*/
+/*==  FOOTER  ==*/
+/*==  ======  ==*/
+
+footer {
+    background: #000;
+    padding-top: 50px;
+
+    .container-footer {
+        @extend %container;
+        text-align: center;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .nav-link {
+            position: relative;
+            display: inline-block;
+            padding: 1rem 0;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+    }
+
+    .navbar-logo {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+        .logo-link {
+            margin: 0 .5rem;
+        }
+    }
+
+    .copyright {
+        color: white;
+        opacity: 0.7;
+        font-weight: bold;
+        margin-top: 1rem;
+    }
+
+}
+
+@media screen and (min-width: 722px) {
+    main {
+        background: url(images/desktop/image-hero.jpg) center/cover no-repeat;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .desktop {
+        display: initial;
+    }
+
+    .container {
+        h1 {
+            width: 50%;
+        }
+
+        nav {
+    
+            .mobile-nav {
+                position: static;
+                display: inherit;
+                width: auto;
+                margin-left: auto;
+                flex-direction: row;
+                background-color: transparent;
+                transform: translate(0);
+    
+                .nav-link {
+                    margin: 0 10px;
+                }
+    
+                .toggle-close {
+                    display: none;
+                }
+    
+            }
+    
+            .toggle {
+                display: none;
+            }
+        }
+    }
+
+
+    .galerie {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, 256px);
+        justify-content: center;
+        gap: 10px;
+
+        h2 {
+            grid-column: 1 / -1;
+            font-size: 32px;
+            text-align: left;
+        }
+        
+        .img {
+            height: 450px;
+
+            .mask {
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.601863) 100%);
+            }
+
+            .subtitle {
+                transform: translate(0);
+                width: 80%;
+                bottom: 10%;
+                top: auto;
+            }
+
+            .desktop {
+                width: auto;
+                margin: 0px 0;
+            }
+            
+        }
+
+        .see-all {
+            @include absolute(auto, 0, auto, auto);
+            grid-column: -2 / -1;
+        }
+    }
+
+    footer {
+
+        .container-footer {
+            text-align: left;
+        }
+
+        .navbar {
+            flex-direction: row;
+            justify-content: center;
+            gap: 10px;
+
+            .nav-link {
+                padding: 5px 0;
+            }
+
+        }
+
+        .navbar-logo {
+            margin: 15px 0;
+        }
+
+        .copyright {
+            text-align: center;
+            margin: 0;
+        }
+
+
+    }
+
+}
+
+@media screen and (min-width: 1101px) {
+    .galerie {
+        grid-template-columns: repeat(4, 256px);
+    }
+}
+
+@media screen and (min-width: 1054px) {
+
+    .vr {
+        display: grid;
+        grid-template: 166px 334px / 600px 130px 324px;
+
+        img.desktop {
+            height: 100%;
+            grid-column: 1 / span 2;
+            grid-row: 1 / -1;
+        }
+
+        aside {
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            grid-column: 2 / -1;
+            grid-row: 2 / -1;
+            background-color: #fff;
+
+            h2 {
+                margin-top: auto;
+                font-size: 40px;
+            }
+            h2, p {
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            p {
+                line-height: 1.5;
+                opacity: 0.7;
+                margin-bottom: auto;
+            }
+
+        }
+
+    }
+}
+
+.attribution {
+    font-size: 12px;
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+    
+    a {
+        color: white; 
+    }
+}

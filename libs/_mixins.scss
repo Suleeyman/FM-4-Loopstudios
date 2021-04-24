@@ -1,0 +1,18 @@
+@mixin absolute-center($top: 50%, $left: 50%, $x, $y) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    transform: translate($x, $y);
+}
+
+@mixin absolute($top, $right, $bottom, $left) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin transition($s, $graph: linear) {
+    transition: $s $graph;
+}
