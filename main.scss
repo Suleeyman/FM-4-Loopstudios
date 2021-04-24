@@ -128,8 +128,8 @@ main {
 }
 
 /* Toggle mobile navbar*/
-.is-open {
-    transform: translateY(0);
+.container ul.is-open {
+    transform: translate(0);
 }
 
 .vr, .galerie {

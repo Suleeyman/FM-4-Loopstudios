@@ -113,7 +113,7 @@ main {
 }
 
 /* Toggle mobile navbar*/
-.is-open {
+.container ul.is-open {
   transform: translateY(0);
 }
 
