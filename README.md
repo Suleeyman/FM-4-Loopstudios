@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Submited on FM](https://your-solution-url.com)
+- Solution URL: [Submited on FM](https://www.frontendmentor.io/solutions/loopstudios-with-basic-scss-and-display-grid-1aXYoPNF-)
 - Live Site URL: [Github page](https://suleeyman.github.io/FM-4-Loopstudios/)
 
 ## My process
