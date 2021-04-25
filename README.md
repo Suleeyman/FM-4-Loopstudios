@@ -46,19 +46,12 @@ Users should be able to:
 
 Implement a background on images, a "`mask`".
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
 ```css
 .mask {
   background: linear-gradient(270deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.601863) 100%);
 }
 ```
 Also learned how to make a bit more advanced hover effects with `clip-path` CSS property with ::after pseudo-element.
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
 
 ```css
 .galerie .see-all::after {
