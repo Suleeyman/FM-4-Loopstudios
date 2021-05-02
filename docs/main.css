@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap");
 footer .container-footer, .vr, .galerie, .container {
-  max-width: 1054px;
+  max-width: 1110px;
   width: calc(100% - 48px);
   margin-left: auto;
   margin-right: auto;
@@ -58,7 +58,7 @@ img {
 /*===MAIN CONTENT===*/
 /*===            ===*/
 main {
-  background: url(./images/mobile/image-hero.jpg) center/cover no-repeat;
+  background: url(images/mobile/image-hero.jpg) center/cover no-repeat;
   height: 650px;
   width: 100%;
   padding-top: 50px;
@@ -259,7 +259,7 @@ footer .copyright {
 
 @media screen and (min-width: 722px) {
   main {
-    background: url(./images/desktop/image-hero.jpg) center/cover no-repeat;
+    background: url(images/desktop/image-hero.jpg) center/cover no-repeat;
   }
 
   .mobile {
@@ -270,9 +270,6 @@ footer .copyright {
     display: initial;
   }
 
-  .container h1 {
-    width: 50%;
-  }
   .container nav .mobile-nav {
     position: static;
     display: inherit;
@@ -348,15 +345,16 @@ footer .copyright {
     margin: 0;
   }
 }
-@media screen and (min-width: 1101px) {
-  .galerie {
-    grid-template-columns: repeat(4, 256px);
+@media screen and (min-width: 1111px) {
+  h1 {
+    width: 60%;
+    font-size: 72px;
+    line-height: 70px;
   }
-}
-@media screen and (min-width: 1054px) {
+
   .vr {
     display: grid;
-    grid-template: 166px 334px/600px 130px 324px;
+    grid-template: 183px 317px/560px 150px 371px;
   }
   .vr img.desktop {
     height: 100%;
@@ -366,24 +364,31 @@ footer .copyright {
   .vr aside {
     text-align: left;
     display: flex;
+    height: 100%;
     flex-direction: column;
-    grid-column: 2/-1;
+    justify-content: flex-end;
+    grid-column: 2/span 2;
     grid-row: 2/-1;
     background-color: #fff;
+    width: 95%;
   }
   .vr aside h2 {
-    margin-top: auto;
-    font-size: 40px;
+    margin: 0;
+    margin-top: 96px;
+    padding-bottom: 25px;
+    font-size: 48px;
+    line-height: 48px;
   }
-  .vr aside h2, .vr aside p {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+  .vr aside p, .vr aside h2 {
+    margin-left: 86px;
   }
   .vr aside p {
     line-height: 1.5;
     opacity: 0.7;
-    margin-bottom: auto;
+  }
+
+  .galerie {
+    grid-template-columns: repeat(4, 256px);
   }
 }
 .attribution {
@@ -395,3 +400,5 @@ footer .copyright {
 .attribution a {
   color: white;
 }
+
+/*# sourceMappingURL=main.css.map */

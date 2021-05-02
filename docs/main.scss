@@ -282,9 +282,6 @@ footer {
     }
 
     .container {
-        h1 {
-            width: 50%;
-        }
 
         nav {
     
@@ -385,17 +382,21 @@ footer {
 
 }
 
-@media screen and (min-width: 1101px) {
-    .galerie {
-        grid-template-columns: repeat(4, 256px);
-    }
+@media screen and (min-width: 1054px) {
+
+
 }
 
-@media screen and (min-width: 1054px) {
+@media screen and (min-width: 1111px) {
+    h1 {
+        width: 60%;
+        font-size: 72px;
+        line-height: 70px;
+    }
 
     .vr {
         display: grid;
-        grid-template: 166px 334px / 600px 130px 324px;
+        grid-template: 183px 317px / 560px 150px 371px;
 
         img.desktop {
             height: 100%;
@@ -406,29 +407,35 @@ footer {
         aside {
             text-align: left;
             display: flex;
+            height: 100%;
             flex-direction: column;
-            grid-column: 2 / -1;
+            justify-content: flex-end;
+            grid-column: 2 / span 2;
             grid-row: 2 / -1;
             background-color: #fff;
+            width: 95%;
 
             h2 {
-                margin-top: auto;
-                font-size: 40px;
+                margin: 0;
+                margin-top: 96px;
+                padding-bottom: 25px;
+                font-size: 48px;
+                line-height: 48px;
             }
-            h2, p {
-                width: 80%;
-                margin-left: auto;
-                margin-right: auto;
+
+            p,h2 {
+                margin-left: 86px;
             }
 
             p {
                 line-height: 1.5;
                 opacity: 0.7;
-                margin-bottom: auto;
             }
-
         }
+    }
 
+    .galerie {
+        grid-template-columns: repeat(4, 256px);
     }
 }
 
